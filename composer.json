@@ -1,5 +1,5 @@
 {
-    "name": "xmorave2/Sip2Objects",
+    "name": "xmorave2/sip2objects",
     "description": "PHP library to ease using php-sip2",
     "type": "library",
     "authors": [
