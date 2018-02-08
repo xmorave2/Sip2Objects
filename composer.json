@@ -1,0 +1,21 @@
+{
+    "name": "xmorave2/Sip2Objects",
+    "description": "PHP library to ease using php-sip2",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Josef Moravec",
+            "email": "josef.moravec@gmail.com",
+            "role": "developer"
+         }
+    ],
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "SIP2\\": "src/"
+        }
+    },
+    "require": {
+        "cap60552/php-sip2": "^1.0"
+    }
+}
