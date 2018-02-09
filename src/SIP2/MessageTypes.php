@@ -11,7 +11,7 @@ class MessageTypes
     const CHECKIN =
         ["msg" => "Checkin", "parse" => "Checkin"];
     const BLOCK_PATRON =
-        ]"msg" => "BlockPatron", "parse" => ""];
+        ["msg" => "BlockPatron", "parse" => ""];
     const SC_STATUS =
         ["msg" => "SCStatus", "parse" => "ACSStatus"];
     const REQUEST_ACS_RESEND =
