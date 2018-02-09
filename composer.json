@@ -12,7 +12,7 @@
     "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
-            "SIP2\\": "src/"
+            "SIP2\\": "src/SIP2"
         }
     },
     "require": {
