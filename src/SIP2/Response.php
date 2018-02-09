@@ -17,6 +17,11 @@ class Response
     protected $connection;
 
     /*
+     * @var Type of response
+     */
+    protected $type;
+
+    /*
      * @var Fixed data
      */
     public $fixed;
@@ -28,6 +33,8 @@ class Response
 
     public function __construct($message, $connection, $type) 
     {
+        $this->connection = $connection;
+        $this->type = $type;
         $this->message = $message;
         $this->sanitize();
         $this->parse();
