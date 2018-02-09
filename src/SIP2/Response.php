@@ -50,6 +50,7 @@ class Response
         var_dump($this->type);
         $parseFunctionName = "parse" . $this->type["parse"] . "Response";
         $parsed = $this->connection->$parseFunctionName($this->message);
+        var_dump($parsed);
         $this->fixed = $parsed["fixed"];
         $this->variable = $parsed["variable"];
     }
