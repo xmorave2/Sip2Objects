@@ -40,6 +40,7 @@ class Response
 
     protected function parse()
     {
+        var_dump($this->type);
         $parseFunctionName = "parse" . $this->type["parse"] . "Response";
         $parsed = $this->connection->$parseFunctionName();
         $this->fixed = $parsed["fixed"];
