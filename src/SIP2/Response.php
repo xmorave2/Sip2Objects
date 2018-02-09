@@ -42,7 +42,7 @@ class Response
 
     protected function sanitize()
     {
-        $this->message = preg_replace('/[\r\n]+/', '', $response);
+        $this->message = preg_replace('/[\r\n]+/', '', $this->message);
     }
 
     protected function parse()
