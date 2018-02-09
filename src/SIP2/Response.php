@@ -26,7 +26,7 @@ class Response
      */
     public $variable;
 
-    public function __construct($message, $type, $connection) 
+    public function __construct($message, $connection, $type) 
     {
         $this->message = $message;
         $this->sanitize();
