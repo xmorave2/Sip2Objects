@@ -54,14 +54,12 @@ class Connection
             $this->connection->msgPatronInformation('charged', '1', '99999') :
             $this->connection->msgPatronInformation();
         $patronMessage = $this->connection->get_message($patronRequest);
-        var_dump(MessageTypes::PATRON_INFORMATION);
         $patronResponse = new Response($patronMessage, $this->connection, MessageTypes::PATRON_INFORMATION);
         $response["patron"] = $patronResponse;
         if ($checkouts) {
             foreach ($patronResponse->variable['AU'] as $barcode)
             {
-                var_dump($barcode);
-                //$response["checkouts"][] = $this->getItemInfo($barcode);
+                $response["checkouts"][] = $this->getItemInfo($barcode);
             }
         }
         return $response;
@@ -73,7 +71,7 @@ class Connection
             $this->connect($this->patron);
         }
         $itemRequest = $this->connection->msgItemInformation($barcode);
-        $itemMessage = $this->connection->get_message($itemMessage);
+        $itemMessage = $this->connection->get_message($itemRequest);
         $itemResponse = new Response($itemMessage, $this->connection, MessageTypes::ITEM_INFORMATION);
         return $itemResponse;
     }
