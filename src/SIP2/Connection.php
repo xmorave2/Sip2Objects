@@ -60,7 +60,8 @@ class Connection
         if ($checkouts) {
             foreach ($patronResponse->variable['AU'] as $barcode)
             {
-                $response["checkouts"][] = $this->getItemInfo($barcode);
+                var_dump($barcode);
+                //$response["checkouts"][] = $this->getItemInfo($barcode);
             }
         }
         return $response;
