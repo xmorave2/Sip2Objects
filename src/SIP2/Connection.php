@@ -54,6 +54,7 @@ class Connection
             $this->connection->msgPatronInformation('charged', '1', '99999') :
             $this->connection->msgPatronInformation();
         $patronMessage = $this->connection->get_message($patronRequest);
+        var_dump(MessageTypes::PATRON_INFORMATION);
         $patronResponse = new Response($patronMessage, $this->connection, MessageTypes::PATRON_INFORMATION);
         $response["patron"] = $patronResponse;
         if ($checkouts) {
