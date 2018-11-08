@@ -82,9 +82,20 @@ class Connection
             $this->connect($this->patron);
         }
         $checkinRequest = $this->connection->msgCheckin($itemBarcode, '');
-        $checkinMessage = $this->connection->get_message($itemRequest);
-        $itemResponse = new Response($itemMessage, $this->connection, MessageType::CHECKIN);
+        $checkinMessage = $this->connection->get_message($checkinRequest);
+        $checkinResponse = new Response($checkinMessage, $this->connection, MessageType::CHECKIN);
         return $checkinResponse;
+    }
+
+    public function doCheckout($itemBarcode, $location)
+    {
+        if( !$this->connected ) {
+            $this->connect($this->patron);
+        }
+        $checkoutRequest = $this->connection->msgCheckout($barcode, $location);
+        $checkoutMessage = $this->connection->get_message($checkoutRequest);
+        $checkoutResponse = new Response($checkoutMessage, $this->connection, MessageType::CHECKOUT);
+        return $checkoutResponse;
     }
 
     protected function connect($patronBarcode)
