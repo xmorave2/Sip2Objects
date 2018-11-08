@@ -83,7 +83,7 @@ class Connection
         }
         $checkinRequest = $this->connection->msgCheckin($itemBarcode, '');
         $checkinMessage = $this->connection->get_message($checkinRequest);
-        $checkinResponse = new Response($checkinMessage, $this->connection, MessageType::CHECKIN);
+        $checkinResponse = new Response($checkinMessage, $this->connection, MessageTypes::CHECKIN);
         return $checkinResponse;
     }
 
@@ -94,7 +94,7 @@ class Connection
         }
         $checkoutRequest = $this->connection->msgCheckout($barcode, $location);
         $checkoutMessage = $this->connection->get_message($checkoutRequest);
-        $checkoutResponse = new Response($checkoutMessage, $this->connection, MessageType::CHECKOUT);
+        $checkoutResponse = new Response($checkoutMessage, $this->connection, MessageTypes::CHECKOUT);
         return $checkoutResponse;
     }
 
