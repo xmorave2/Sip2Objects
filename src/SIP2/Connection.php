@@ -85,7 +85,7 @@ class Connection
         $checkinMessage = $this->connection->get_message($itemRequest);
         $itemResponse = new Response($itemMessage, $this->connection, MessageType::CHECKIN);
         return $checkinResponse;
-
+    }
 
     protected function connect($patronBarcode)
     {
