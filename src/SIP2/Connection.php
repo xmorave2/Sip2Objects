@@ -76,6 +76,17 @@ class Connection
         return $itemResponse;
     }
 
+    public function doCheckin($itemBarcode)
+    {
+        if( !$this->connected ) {
+            $this->connect($this->patron);
+        }
+        $checkinRequest = $this->connection->msgCheckin($itemBarcode, '');
+        $checkinMessage = $this->connection->get_message($itemRequest);
+        $itemResponse = new Response($itemMessage, $this->connection, MessageType::CHECKIN);
+        return $checkinResponse;
+
+
     protected function connect($patronBarcode)
     {
         $this->connection->patron = $patronBarcode;
